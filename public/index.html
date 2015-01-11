@@ -13,10 +13,12 @@
     <script src="js/app.js"></script>
 </head>
 
-<body>
+<body ng-app="routerApp">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-12">
 
-			<div class="container">
-				<nav class="navbar navbar-default">
+				<nav class="navbar navbar-default" role="navigation">
 				  <div class="container-fluid">
 				    <div class="navbar-header">
 				      <a class="navbar-brand" href="#">
@@ -80,57 +82,29 @@
 					</ul>
 				  </div>
 				</nav>
-
-		<div class="container">
-			<div class="row"></div>
-			<div class="col-md-3">
-				<ul class="nav nav-pills nav-stacked" role="tablist">
-							<li>
-
-								<div class="input-append">
-								  <input class="span2" type="text" placeholder="Search">
-								  <button class="btn" type="button">
-								  <span class="glyphicon glyphicon-search"></span>
-								</button>
-								</div>
-
-
-								</li>
-							
-							<li class="active">
-								<a href="index.html"><i class="fa fa-tachometer"></i> Dashboard</a>
-							</li>
-							<li>
-								<a href="hcc.html"><i class="fa fa-bar-chart"></i> Headcount Charts</a>
-							</li>
-							<li>
-								<a href="its.html"><i class="fa fa-table"></i>Internal Talent Search</a>
-							</li>
-							<li>
-								<a href="trends.html"><i class="fa fa-pencil-square-o"></i> Trends</a>
-							</li>
-							<li>
-								  &nbsp;
-							</li>
-							<li>
-								  &nbsp;
-							</li>
-							<li>
-								  &nbsp;
-							</li>
-  
-					</ul>
-				</div>
-				<canvas id="myChart0" width="200" height="200"></canvas>
-				<canvas id="myChart1" width="200" height="200"></canvas>
-				<canvas id="myChart2" width="200" height="200"></canvas>
-				<canvas id="myChart3" width="200" height="200"></canvas>
-				<canvas id="myChart4" width="200" height="200"></canvas>
-				<canvas id="myChart5" width="200" height="200"></canvas>
-		</div>
-
-		</div>
-
-
+			</div>
+			</div>
+			</div>
+<!-- ********************** nav ***************-->
+	<div class="container">
+	<div class="row">
+	<div class="col-md-12">
+		<div ui-view> </div>
+	</div>
+	</div>
+	</div>
+	
+	<div class="container">
+	<div class="row">
+	<div class="col-md-12">
+	<div class="footer">
+		footer
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	<script src="js/chartabout.js"></script>
+	<script src="js/Chart.min.js"></script>
 </body>
 </html>
