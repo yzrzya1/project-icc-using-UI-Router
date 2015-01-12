@@ -1,6 +1,6 @@
 
 
-var routerApp = angular.module('routerApp',['ui.router']);
+var routerApp = angular.module('routerApp',['ui.router','dashboardApp']);
 	routerApp.filter('slice', function() {
 	  return function(arr, start, end) {
 	    return arr.slice(start, end);
@@ -14,7 +14,7 @@ routerApp.config(
 	//$urlRouterProvider.otherwise('/dashboard');
 
 	$stateProvider
-
+		/*
 		.state('dashboard',{
 			url: '/dashboard',
 			templateUrl: 'dashboard.html',
@@ -22,6 +22,7 @@ routerApp.config(
 				$scope.message='ng-work';
 			}
 		})
+		*/
 		.state('hcc',{
 			url: '/hcc',
 			templateUrl: 'hcc.html',
