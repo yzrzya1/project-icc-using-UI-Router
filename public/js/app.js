@@ -11,23 +11,32 @@ routerApp.config(
 	
 	function($stateProvider,$urlRouterProvider){
 
-	//$urlRouterProvider.otherwise('/home');
+	//$urlRouterProvider.otherwise('/dashboard');
 
 	$stateProvider
 
-
-		.state('home',{
-			url: '/home',
-			templateUrl: 'vertical-nav.html'
-		})
-		.state('home.dashboard',{
+		.state('dashboard',{
 			url: '/dashboard',
 			templateUrl: 'dashboard.html',
 			controller: function($scope){
 				$scope.message='ng-work';
 			}
 		})
-		.state('home.its',{
+		.state('hcc',{
+			url: '/hcc',
+			templateUrl: 'hcc.html',
+			controller: function($scope){
+				$scope.message='ng-work';
+			}
+		})
+		.state('trends',{
+			url: '/trends',
+			templateUrl: 'trends.html',
+			controller: function($scope){
+				$scope.message='ng-work';
+			}
+		})
+		.state('its',{
 			url: '/its',
 			templateUrl: 'its.html',
 			controller: function($scope,$http){
@@ -45,36 +54,3 @@ routerApp.config(
 						}
 					});
 });
-
-/*
-var home = {
-	abstract:true,
-	name:'parent',
-	url:'/home',
-	templateUrl: 'vertical-nav.html',
-	controller:function($scope){
-		$scope.contacts = [{id:0,name:'code_bunny'},{id:1,name:'white_bunny'},{id:2,name:'black_bunny'}]
-	}
-};
-var dashboard = {
-	name:"parent.child",
-	url: '/dashboard',
-	templateUrl: 'dashboard.html',
-	parent:home
-};
-var detail = {
-	name:"parent.detail",
-	url:'/detail:id',
-	templateUrl: 'detail.html',
-	parent:home,
-	controller:function($scope,$stateParams){
-		$scope.id=$stateParams.id
-	}
-};
-
-routerApp.config(function($locationProvider,$stateProvider){
-	//$locationProvider.html5Mode({enabled:true}).hashPrefix('!');
-	$stateProvider.state(home).state(dashboard).state(detail);
-});
-
-*/
