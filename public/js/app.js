@@ -1,4 +1,4 @@
-
+var app2 = angular.module('loginApp',[]);
 
 var routerApp = angular.module('routerApp',['ui.router','dashboardApp']);
 	routerApp.filter('slice', function() {
@@ -55,3 +55,31 @@ routerApp.config(
 						}
 					});
 });
+
+
+
+function loginController($scope,$http){
+	$scope.formData = {};
+	var inUname='',
+		inUpsd='';
+
+	console.log('2');
+	$scope.logininfos=[];
+
+	$scope.auth = function(){
+		console.log('call login btn');
+		$scope.formData.uname=$("#uname").val();
+		$scope.formData.upsd=$("#upsd").val();
+		
+		$scope.message=$scope.formData;
+
+	$http.post('/api/login/logininfos',$scope.formData)
+		.success(function(data){
+			console.log($scope.formData);
+			window.location.assign(data);
+		})
+		.error(function(data){
+			console.log('Error:' + data);
+		});
+	};
+};
