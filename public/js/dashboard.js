@@ -7,7 +7,7 @@ var dashboardApp = angular.module('dashboardApp',['ui.router'])
 		});
 	})
 	.controller('dashboardCtrl',function(){
-
+					var aaaaa =0;
 		var ctx0 = $("#myChart0").get(0).getContext("2d");
 		var ctx1 = $("#myChart1").get(0).getContext("2d");
 		var ctx2 = $("#myChart2").get(0).getContext("2d");
@@ -142,18 +142,21 @@ var dashboardApp = angular.module('dashboardApp',['ui.router'])
 							        label: "Yellow"
 							    }
 							]
-					var myBarChart = new Chart(ctx0).Bar(data0,{animationSteps: 15});
-					var myRadarChart = new Chart(ctx1).Radar(data1,{animationSteps: 15});
-					var myLineChart = new Chart(ctx2).Line(data2,{animationSteps: 15});
+					var myBarChart = new Chart(ctx0).Bar(data0,{animationSteps: 60});
+					var myRadarChart = new Chart(ctx1).Radar(data1,{animationSteps: 60});
+					var myLineChart = new Chart(ctx2).Line(data2,{animationSteps: 60});
 					var myPolarArea = new Chart(ctx3).PolarArea(data3);
 					var myPieChart = new Chart(ctx4).Pie(data4);
 					var myDoughnutChart = new Chart(ctx5).Doughnut(data4);
-
+					
 					var latestLabel0 = data0.labels[6];
 					var latestLabel1 = data1.labels[6];
 					var latestLabel2 = data2.labels[6];
-
+					
+					
+/*
 setInterval(function(){
+
 
   myBarChart.addData([Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)], ++latestLabel0);
   myRadarChart.addData([Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)], ++latestLabel1);
@@ -167,7 +170,7 @@ setInterval(function(){
   myLineChart.removeData();
 }, 3000);
 
-
+*/
 
 //************************
 

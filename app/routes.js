@@ -38,7 +38,7 @@ module.exports = function(app) {
 
 	app.get('/api/login/logininfos',function(req,res){
 			if(req.session.uname){
-			var data = '/index.html';
+			var data = '/dashboard';
 			
 			res.end(data);
 			console.log(req.session.uname);
@@ -82,7 +82,7 @@ module.exports = function(app) {
 			
 				req.session.uname=logininfo.uname;
 
-				var data = '/index.html';
+				var data = '/#/dashboard';
 			
 				res.end(data);
 				console.log(req.session.uname);
